@@ -15,7 +15,7 @@ $updateInterval = 7
 ############                                                                                                         ############
 ############                DO NOT MODIFY THIS FILE. THIS FILE IS HASHED AND UPDATED AUTOMATICALLY.                  ############
 ############                    ANY CHANGES MADE TO THIS FILE WILL BE OVERWRITTEN BY COMMITS TO                      ############
-############                       https://github.com/ChrisTitusTech/powershell-profile.git.                         ############
+############                       https://github.com/Compourr/powershell-profile.git.                         ############
 ############                                                                                                         ############
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
 ############                                                                                                         ############
@@ -58,7 +58,7 @@ if ($repo_root_Override){
     # then use it instead
     $repo_root = $repo_root_Override
 } else {
-    $repo_root = "https://raw.githubusercontent.com/ChrisTitusTech"
+    $repo_root = "https://raw.githubusercontent.com/Compourri"
 }
 
 # Define the path to the file that stores the last execution time
@@ -267,11 +267,11 @@ if ($EDITOR_Override){
           elseif (Test-CommandExists notepad++) { 'notepad++' }
           elseif (Test-CommandExists sublime_text) { 'sublime_text' }
           else { 'notepad' }
-    Set-Alias -Name vim -Value $EDITOR
+    Set-Alias -Name code -Value $EDITOR
 }
 # Quick Access to Editing the Profile
 function Edit-Profile {
-    vim $PROFILE.CurrentUserAllHosts
+    code $PROFILE.CurrentUserAllHosts
 }
 Set-Alias -Name ep -Value Edit-Profile
 
@@ -285,20 +285,9 @@ function ff($name) {
 # Network Utilities
 function Get-PubIP { (Invoke-WebRequest http://ifconfig.me/ip).Content }
 
-# Open WinUtil full-release
-function winutil {
-    irm https://christitus.com/win | iex
-}
-
-# Open WinUtil dev-release
-function winutildev {
-	# If function "WinUtilDev_Override" is defined in profile.ps1 file
-    # then call it instead.
-    if (Get-Command -Name "WinUtilDev_Override" -ErrorAction SilentlyContinue) {
-        WinUtilDev_Override
-    } else {
-        irm https://christitus.com/windev | iex
-    }
+# Open Essentials full-release
+function essentials {
+    irm https://compourri.co.za/essentials | iex
 }
 
 # System Utilities
@@ -611,7 +600,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 if (Get-Command -Name "Get-Theme_Override" -ErrorAction SilentlyContinue){
     Get-Theme_Override;
 } else {
-    oh-my-posh init pwsh --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cobalt2.omp.json | Invoke-Expression
+    oh-my-posh init pwsh --config https://github.com/Compourri/pwsh10k/blob/master/pwsh10k.omp.json | Invoke-Expression
 }
 
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {

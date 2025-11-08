@@ -15,7 +15,7 @@ $updateInterval = 7
 ############                                                                                                         ############
 ############                DO NOT MODIFY THIS FILE. THIS FILE IS HASHED AND UPDATED AUTOMATICALLY.                  ############
 ############                    ANY CHANGES MADE TO THIS FILE WILL BE OVERWRITTEN BY COMMITS TO                      ############
-############                       https://github.com/Compourr/powershell-profile.git.                         ############
+############                       https://github.com/Compourri/powershell-profile.git.                         ############
 ############                                                                                                         ############
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
 ############                                                                                                         ############
@@ -600,7 +600,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 if (Get-Command -Name "Get-Theme_Override" -ErrorAction SilentlyContinue){
     Get-Theme_Override;
 } else {
-    oh-my-posh init pwsh --config https://github.com/Compourri/pwsh10k/blob/master/pwsh10k.omp.json | Invoke-Expression
+    oh-my-posh init pwsh --config https://raw.githubusercontent.com/Compourri/pwsh10k/refs/heads/master/pwsh10k.omp.json | Invoke-Expression
 }
 
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {

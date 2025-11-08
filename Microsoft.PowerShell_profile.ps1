@@ -266,7 +266,7 @@ if ($EDITOR_Override){
           elseif (Test-CommandExists codium) { 'codium' }
           elseif (Test-CommandExists notepad++) { 'notepad++' }
           elseif (Test-CommandExists sublime_text) { 'sublime_text' }
-          else { 'notepad' }
+          else { 'code' }
     Set-Alias -Name code -Value $EDITOR
 }
 # Quick Access to Editing the Profile

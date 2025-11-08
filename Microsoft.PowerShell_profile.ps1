@@ -266,12 +266,12 @@ if ($EDITOR_Override){
           elseif (Test-CommandExists codium) { 'codium' }
           elseif (Test-CommandExists notepad++) { 'notepad++' }
           elseif (Test-CommandExists sublime_text) { 'sublime_text' }
-          else { 'code' }
-    Set-Alias -Name code -Value $EDITOR
+          else { 'notepad' }
+    Set-Alias -Name vim -Value $EDITOR
 }
 # Quick Access to Editing the Profile
 function Edit-Profile {
-    code $PROFILE.CurrentUserAllHosts
+    vim $PROFILE.CurrentUserAllHosts
 }
 Set-Alias -Name ep -Value Edit-Profile
 

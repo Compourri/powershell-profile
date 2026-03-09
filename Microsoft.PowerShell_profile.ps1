@@ -662,7 +662,7 @@ if (Get-Command -Name "Get-Theme_Override" -ErrorAction SilentlyContinue) {
     Get-Theme_Override
 } else {
     # Oh My Posh initialization with local theme fallback and auto-download
-    $localThemePath = Join-Path (Get-ProfileDir) "cobalt2.omp.json"
+    $localThemePath = Join-Path (Get-ProfileDir) "pwsh10k.omp.json"
     if (-not (Test-Path $localThemePath)) {
         # Try to download the theme file to the detected local path
         $themeUrl = "https://raw.githubusercontent.com/Compourri/pwsh10k/refs/heads/master/pwsh10k.omp.json"
